@@ -1,0 +1,111 @@
+* {
+  /* border: 1px solid red; */
+}
+
+/* reset */
+body,
+h1,
+ul,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+/* layouts */
+.l_wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* commons */
+
+/* components */
+.header {
+  display: inline-block;
+  width: 100%;
+  background: url("./images/header-bg.png") no-repeat;
+}
+
+.header-container {
+  border: 30px solid orange;
+  border-bottom: 0;
+  margin-top: 100px;
+  padding: 40px;
+}
+
+.header-image {
+  float: right;
+}
+
+.header-title {
+  display: inline-block;
+  color: orange;
+  border-bottom: 5px solid orange;
+  font-weight: normal;
+  letter-spacing: 10px;
+  margin-bottom: 30px;
+}
+
+.header-description {
+  color: orange;
+  line-height: 30px;
+}
+
+.contents {
+  background: rgb(221, 221, 221);
+  padding: 30px;
+}
+
+.woods {
+  overflow: hidden;
+  margin: 0 -16px;
+}
+
+.wood-item {
+  float: left;
+  width: 33.333333%;
+  box-sizing: border-box;
+  padding: 0 16px;
+}
+
+.wood-wrapper {
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.wood-cover {
+  width: 100%;
+  vertical-align: top;
+}
+
+.wood-item-bottom {
+  border-top: 4px solid orange;
+  background-color: white;
+  overflow: hidden;
+}
+
+.wood-item-bottom .title {
+  font-size: 16px;
+  color: orange;
+  display: inline;
+  margin-left: 8px;
+  line-height: 50px;
+}
+
+.wood-item-bottom .play {
+  float: right;
+}
+
+.footer {
+  border-top: 2px solid #ccc;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 10px;
+  font-size: 13px;
+  padding: 20px;
+  color: rgb(187, 187, 187);
+}
