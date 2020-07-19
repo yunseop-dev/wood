@@ -15,13 +15,42 @@ li {
   list-style-type: none;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: top;
+}
+
+button {
+    border: 0;
+    background: inherit;
+    font: inherit;
+    margin: 0;
+    padding: 0;
+    color: inherit;
+    -wetkit-appearance: none;
+}
+
+button:focus {
+    outline: none;
+}
+
 /* layouts */
 .l_wrapper {
   max-width: 960px;
   margin: 0 auto;
 }
 
-/* commons */
+.l_row {
+   margin: 0 -10px -20px -10px;
+}
+
+.l_row:after {
+   content: ' ';
+   display: table;
+   clear: both;
+}
+
 .l_col {
   float: left;
   width: 33.333333%;
@@ -67,75 +96,103 @@ li {
   width: 8.33333333%;
 }
 
+/* commons */
+.hide {
+   position: absolute;
+   width: 0;
+   height: 0;
+   overflow: hidden;
+}
+
 /* components */
 .header {
-  display: inline-block;
-  width: 100%;
   background: url("./images/header-bg.png") repeat;
+  color: orangered;
+  padding-top: 100px;
 }
+
 
 .header-container {
   position: relative;
-  border: 30px solid orange;
-  border-bottom: 0;
-  margin-top: 100px;
+  border-width: 30px 30px 0 30px;
+  border-style: solid;
   padding: 40px;
-  padding-right: 300px;
-  background: url("./images/container-bg.png") no-repeat;
-  background-position: right;
+  overflow: hidden;
+}
+
+.header-cover {
+  float: right;
+  width: 30%;
+  transition: all .4s;
+}
+
+.header-contents {
+  overflow: hidden;
 }
 
 .header-title {
   display: inline-block;
-  color: orange;
-  border-bottom: 5px solid orange;
   font-weight: normal;
-  letter-spacing: 10px;
+  letter-spacing: 0.5em;
   margin-bottom: 30px;
+  position: relative;
+}
+
+.header-title::after {
+  content: ' ';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -10px;
+  margin-right: 0.5em;
+  height: 10px;
+  border-radius: 4px;
+  background-color: currentColor;
 }
 
 .header-description {
-  color: orange;
-  line-height: 30px;
+  line-height: 1.5;
 }
+
+
 
 .contents {
-  background: rgb(221, 221, 221);
-  padding: 30px;
+  background-color: rgb(221, 221, 221);
+  padding: 20px;
 }
 
-.l_row {
-  overflow: hidden;
-  margin: 0 -16px;
-}
-
-.wood-wrapper {
+.wood {
+  background-color: white;
+  color: orange;
   border-radius: 5px;
   overflow: hidden;
 }
 
 .wood-cover {
   width: 100%;
-  vertical-align: top;
 }
 
-.wood-item-bottom {
-  border-top: 4px solid orange;
+.wood-contents {
+  border-top: 4px solid;
   background-color: white;
   overflow: hidden;
 }
 
-.wood-item-bottom .title {
+.wood-title {
   font-size: 16px;
-  color: orange;
-  display: inline;
+  float: left;
   margin-left: 8px;
   line-height: 50px;
 }
 
-.wood-item-bottom .play {
+.wood-button {
   float: right;
+  width: 50px;
+  height: 50px;
+  background-image: url(images/play.png);
 }
+
+
 
 .footer {
   border-top: 2px solid #ccc;
@@ -148,21 +205,17 @@ li {
 }
 
 @media (max-width: 1024px) {
+  .header {
+    padding-top: 0;
+  }
   .header-container {
-    border: 20px solid orange;
-    border-bottom: 0;
-    padding-right: 40px;
-    background: none;
-    margin-left: 16px;
-    margin-right: 16px;
-    margin-top: 0;
+    border-width: 20px 20px 0 20px; 
   }
 }
 
 @media (max-width: 768px) {
   .header-container {
-    border: 10px solid orange;
-    border-bottom: 0;
+    border-width: 10px 10px 0 10px;
     padding: 30px;
   }
 
@@ -206,9 +259,12 @@ li {
 
 @media (max-width: 640px) {
   .header-container {
-    border: 5px solid orange;
-    border-bottom: 0;
+    border-width: 5px 5px 0 5px;
     padding: 20px;
+  }
+    
+  .header-cover {
+    display: none;
   }
 
   .l_col_s_12_12 {
@@ -248,3 +304,4 @@ li {
     width: 8.33333333%;
   }
 }
+
